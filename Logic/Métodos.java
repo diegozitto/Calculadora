@@ -11,17 +11,41 @@ public class Métodos implements Matemática_Basica {
      */
     @Override
     public double soma() {
-        double valor1, valor2;
+        double valor_1, valor_2;
+        double tentativas = 0 ;
+        String resposta;
 
-        System.out.println("Digite o 1° valor = ");
-        valor1 = scanner.nextDouble();
-        System.out.println("Digite o 2° valor = ");
-        valor2 = scanner.nextDouble();
+                do {
+                    System.out.println("Digite o 1° valor = ");
+                    valor_1 = scanner.nextDouble();
+                    System.out.println("Digite o 2° valor = ");
+                    valor_2 = scanner.nextDouble();
 
-        total = valor1 + valor2;
-        System.out.println(valor1 + " + " + valor2 + " = " + total);
-        return total;
+                    total = valor_1 + valor_2;
+                    System.out.println(valor_1 + " + " + valor_2 + " = " + total);
+                    System.out.println("Gostaria de somar mais uma vez? [S/N]");
+                    scanner.nextLine();
+                    resposta = scanner.next();
 
+                    if(resposta.equalsIgnoreCase("s")){
+                        System.out.println("Digite o 1° valor = ");
+                        valor_1 = scanner.nextDouble();
+                        System.out.println("Digite o 2° valor = ");
+                        valor_2 = scanner.nextDouble();
+
+                        total = valor_1 + valor_2;
+                        System.out.println(valor_1 + " + " + valor_2 + " = " + total);
+                        System.out.println("Gostaria de somar mais uma vez? [S/N]");
+                        scanner.nextLine();
+                        resposta = scanner.next();
+                    } else if (!resposta.equalsIgnoreCase("s")) {
+                        System.out.println("Até a próxima conta juntos.");
+                        break;
+                    }
+
+                } while(tentativas <= tentativas++);
+
+                        return total;
     }
 
     /**
