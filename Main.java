@@ -1,11 +1,11 @@
-import Logic.Métodos;
+import Logic.Metodos;
 
 public class Main {
     public static void main(String[] args) {
-        Métodos joao = new Métodos();
-
-        joao.soma();
-
+        
+        Metodos  metodos = new Metodos();
+        metodos.soma();
+        metodos.subtração();
 
     }
 }
